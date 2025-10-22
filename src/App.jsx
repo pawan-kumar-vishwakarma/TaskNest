@@ -13,6 +13,17 @@ export default function App() {
   const addTask = (task)=> {
     setTasks([...tasks, task]);
   }
+
+  const updateTask = (updatedTask, index) => {
+    const newtask = [...tasks];
+    newtask[index] = updatedTask;
+    settasks(newtask);
+  }
+
+  const deleteTask = (index) => {
+    setTasks(tasks.filter((_, i) =>  i != index));
+  }
+
   return (
     <div>
       <h1>Task Buddy</h1>
